@@ -8,7 +8,7 @@
     <name>gameoflife</name>
     <url>https://github.com/wakaleo/game-of-life</url>
     <properties>
-        <build.number>SNAPSHOT</build.number>
+        <build.number>1.2</build.number>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <easyb.version>1.4</easyb.version>
         <cobertura.version>2.6</cobertura.version>
@@ -20,7 +20,6 @@
         <jelastic.context>gameoflife</jelastic.context>
         <jelastic.environment>wakaleo</jelastic.environment>
     </properties>
-
     <scm>
         <connection>scm:git:git@github.com:${github.account}/game-of-life.git</connection>
         <developerConnection>scm:git:git@github.com:${github.account}/game-of-life.git</developerConnection>
@@ -40,7 +39,9 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.11</version>
                 <configuration>
-                    <skip>true</skip>
+                      <skipTests>false</skipTests>
+                <testFailureIgnore>true</testFailureIgnore>
+                <forkMode>once</forkMode>
                 </configuration>
                 <executions>
                     <execution>
@@ -79,7 +80,7 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.7.2.201409121644</version>
+                <version>0.8.2</version>
                 <executions>
                     <execution>
                         <id>jacoco-initialize</id>
@@ -150,7 +151,7 @@
                 <plugin>
                     <groupId>org.easyb</groupId>
                     <artifactId>maven-easyb-plugin</artifactId>
-                    <version>${easyb.version}</version>
+                    <version>1.4</version>
                     <executions>
                         <execution>
                             <goals>
@@ -180,7 +181,7 @@
             <dependency>
                 <groupId>org.easyb</groupId>
                 <artifactId>easyb-core</artifactId>
-                <version>${easyb.version}</version>
+                <version>1.4</version>
                 <scope>test</scope>
             </dependency>
         </dependencies>
@@ -308,7 +309,7 @@
                                 <plugin>
                                     <groupId>org.jacoco</groupId>
                                     <artifactId>jacoco-maven-plugin</artifactId>
-                                    <version>0.7.2.201409121644</version>
+                                    <version>0.8.2</version>
                                 </plugin>
                                 <plugin>
                                     <groupId>org.apache.maven.plugins</groupId>
